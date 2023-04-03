@@ -1,0 +1,38 @@
+.login-container {
+    position: fixed;
+    width: 500px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+}
+
+.login-container .login-form {
+    max-width: 400px;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.login-container .login-form-forgot {
+    float: right;
+}
+
+.login-container .ant-col-rtl .login-form-forgot {
+    float: left;
+}
+
+.login-container .login-form-button {
+    width: 100%;
+}
+.login-container .login-form .title{
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+
+}
