@@ -185,7 +185,7 @@ export default function Home() {
             </Card>
           </Col>
           <Col span={8}>
-            <Card title="Card title" bordered={true}>
+            <Card title="用户最多点赞" bordered={true}>
               <List
                 size="small"
                 dataSource={mostLike}
