@@ -1,12 +1,12 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-1.create react-app your-app-name
-2.Move all files to the React project you created overwrite the default files
-3.Use npm install to download the packages that your project depends on
-4.Run json-server to simulate back-end data：json-server --watch ./db.json --port 8000 
-5.npm start
+## Follow these steps to run the project
+1.create react-app your-app-name\
+2.Move all files to the React project you created overwrite the default files\
+3.Use npm install to download the packages that your project depends on\
+4.Run json-server to simulate back-end data：json-server --watch ./db.json --port 8000 \
+5.npm start\
 
 ## Available Scripts
 
