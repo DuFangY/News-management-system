@@ -1,0 +1,789 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": 123456,
+      "roleState": true,
+      "default": true,
+      "region": "全球",
+      "roleId": 1
+    },
+    {
+      "username": "铁锤",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "亚洲",
+      "roleId": 2,
+      "id": 2
+    },
+    {
+      "username": "钢蛋",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "南美洲",
+      "roleId": 2,
+      "id": 3
+    },
+    {
+      "username": "诸葛山珍",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "全球",
+      "roleId": 1,
+      "id": 4
+    },
+    {
+      "username": "西门吹灯",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "亚洲",
+      "roleId": 2,
+      "id": 5
+    },
+    {
+      "username": "轩辕翠花",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "非洲",
+      "roleId": 3,
+      "id": 6
+    },
+    {
+      "username": "司马海味",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "亚洲",
+      "roleId": 3,
+      "id": 7
+    },
+    {
+      "username": "咕噜墩子",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "亚洲",
+      "roleId": 3,
+      "id": 8
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "roleName": "超级管理员",
+      "roleType": 1,
+      "rights": [
+        "/user-manage",
+        "/right-manage/role/list",
+        "/right-manage/right/list",
+        "/right-manage/role/update",
+        "/right-manage/role/delete",
+        "/right-manage/right/update",
+        "/right-manage/right/delete",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/audit-manage",
+        "/audit-manage/audit",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset",
+        "/right-manage",
+        "/user-manage/add",
+        "/user-manage/delete",
+        "/user-manage/update",
+        "/user-manage/list",
+        "/home"
+      ]
+    },
+    {
+      "id": 2,
+      "roleName": "区域管理员",
+      "roleType": 2,
+      "rights": [
+        "/home",
+        "/user-manage",
+        "/user-manage/add",
+        "/user-manage/delete",
+        "/user-manage/update",
+        "/user-manage/list",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/audit-manage",
+        "/audit-manage/audit",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset"
+      ]
+    },
+    {
+      "id": 3,
+      "roleName": "区域编辑",
+      "roleType": 3,
+      "rights": [
+        "/home",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/audit-manage",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset"
+      ]
+    }
+  ],
+  "children": [
+    {
+      "id": 3,
+      "title": "添加用户",
+      "rightId": 2,
+      "key": "/user-manage/add",
+      "grade": 2
+    },
+    {
+      "id": 4,
+      "title": "删除用户",
+      "rightId": 2,
+      "key": "/user-manage/delete",
+      "grade": 2
+    },
+    {
+      "id": 5,
+      "title": "修改用户",
+      "rightId": 2,
+      "key": "/user-manage/update",
+      "grade": 2
+    },
+    {
+      "id": 6,
+      "title": "用户列表",
+      "rightId": 2,
+      "key": "/user-manage/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 8,
+      "title": "角色列表",
+      "rightId": 7,
+      "key": "/right-manage/role/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 9,
+      "title": "权限列表",
+      "rightId": 7,
+      "key": "/right-manage/right/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 10,
+      "title": "修改角色",
+      "rightId": 7,
+      "key": "/right-manage/role/update",
+      "grade": 2
+    },
+    {
+      "id": 11,
+      "title": "删除角色",
+      "rightId": 7,
+      "key": "/right-manage/role/delete",
+      "grade": 2
+    },
+    {
+      "id": 12,
+      "title": "修改权限",
+      "rightId": 7,
+      "key": "/right-manage/right/update",
+      "grade": 2
+    },
+    {
+      "id": 13,
+      "title": "删除权限",
+      "rightId": 7,
+      "key": "/right-manage/right/delete",
+      "grade": 2
+    },
+    {
+      "id": 15,
+      "title": "新闻列表",
+      "rightId": 14,
+      "key": "/news-manage/list",
+      "grade": 2
+    },
+    {
+      "id": 16,
+      "title": "撰写新闻",
+      "rightId": 14,
+      "key": "/news-manage/add",
+      "grade": 2,
+      "pagepermisson": 1
+    },
+    {
+      "id": 17,
+      "title": "新闻更新",
+      "rightId": 14,
+      "key": "/news-manage/update/:id",
+      "grade": 2,
+      "routepermisson": 1
+    },
+    {
+      "id": 18,
+      "title": "新闻预览",
+      "rightId": 14,
+      "key": "/news-manage/preview/:id",
+      "grade": 2,
+      "routepermisson": 1
+    },
+    {
+      "id": 19,
+      "title": "草稿箱",
+      "rightId": 14,
+      "key": "/news-manage/draft",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 22,
+      "title": "审核新闻",
+      "rightId": 21,
+      "key": "/audit-manage/audit",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 23,
+      "title": "审核列表",
+      "rightId": 21,
+      "key": "/audit-manage/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 25,
+      "title": "待发布",
+      "rightId": 24,
+      "key": "/publish-manage/unpublished",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 26,
+      "title": "已发布",
+      "rightId": 24,
+      "key": "/publish-manage/published",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 27,
+      "title": "已下线",
+      "rightId": 24,
+      "key": "/publish-manage/sunset",
+      "pagepermisson": 1,
+      "grade": 2
+    }
+  ],
+  "rights": [
+    {
+      "id": 1,
+      "title": "首页",
+      "key": "/home",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 2,
+      "title": "用户管理",
+      "key": "/user-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 7,
+      "title": "权限管理",
+      "key": "/right-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 14,
+      "title": "新闻管理",
+      "key": "/news-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 21,
+      "title": "审核管理",
+      "key": "/audit-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 24,
+      "title": "发布管理",
+      "key": "/publish-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "时事新闻",
+      "value": "时事新闻"
+    },
+    {
+      "id": 2,
+      "title": "环球经济",
+      "value": "环球经济"
+    },
+    {
+      "id": 3,
+      "title": "科学技术",
+      "value": "科学技术"
+    },
+    {
+      "id": 4,
+      "title": "军事世界",
+      "value": "军事世界"
+    },
+    {
+      "id": 5,
+      "title": "世界体育",
+      "value": "世界体育"
+    },
+    {
+      "id": 6,
+      "title": "生活理财",
+      "value": "生活理财"
+    }
+  ],
+  "regions": [
+    {
+      "id": 1,
+      "title": "全球",
+      "value": "全球"
+    },
+    {
+      "id": 2,
+      "title": "亚洲",
+      "value": "亚洲"
+    },
+    {
+      "id": 3,
+      "title": "欧洲",
+      "value": "欧洲"
+    },
+    {
+      "id": 4,
+      "title": "北美洲",
+      "value": "北美洲"
+    },
+    {
+      "id": 5,
+      "title": "南美洲",
+      "value": "南美洲"
+    },
+    {
+      "id": 6,
+      "title": "非洲",
+      "value": "非洲"
+    },
+    {
+      "id": 7,
+      "title": "大洋洲",
+      "value": "大洋洲"
+    },
+    {
+      "id": 8,
+      "title": "南极洲",
+      "value": "南极洲"
+    }
+  ],
+  "news": [
+    {
+      "title": "Hello World",
+      "categoryId": 1,
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.</span></p>\n<h2 style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">How to Read This Guide</span></h2>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.</span></p>\n<blockquote style=\"margin-left:-30px;\"></blockquote>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Tip</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">This guide is designed for people who prefer</span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>learning concepts step by step</strong>. If you prefer to learn by doing, check out our</span> <a href=\"https://reactjs.org/tutorial/tutorial.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">practical tutorial</span></a><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">. You might find this guide and the tutorial complementary to each other.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you’re reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Every chapter in this guide builds on the knowledge introduced in earlier chapters.</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.</strong></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">For example,</span> <a href=\"https://reactjs.org/docs/introducing-jsx.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">“Introducing JSX”</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">is the next chapter after this one.</span></p>\n<h2 style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Knowledge Level Assumptions</span></h2>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React is a JavaScript library, and so we’ll assume you have a basic understanding of the JavaScript language.</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>If you don’t feel very confident, we recommend</strong></span> <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>going through a JavaScript tutorial</strong></span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>to check your knowledge level</strong></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won’t have to feel like you’re learning both React and JavaScript at the same time.</span></p>\n<blockquote style=\"margin-left:-30px;\"></blockquote>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Note</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven’t worked with JavaScript in the last few years,</span> <a href=\"https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">these three points</span></a> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">should get you most of the way.</span></p>\n<h2 style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Let’s Get Started!</span></h2>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Keep scrolling down, and you’ll find the link to the</span> <a href=\"https://reactjs.org/docs/introducing-jsx.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">next chapter of this guide</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">right before the website footer.</span><br>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615778694831,
+      "star": 507,
+      "view": 811,
+      "id": 2,
+      "publishTime": 1615778911028,
+      "views": 809
+    },
+    {
+      "title": "Introducing JSX",
+      "categoryId": 2,
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">This funny tag syntax is neither a string nor HTML.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">JSX produces React “elements”. We will explore rendering them to the DOM in the</span> <a href=\"https://reactjs.org/docs/rendering-elements.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">next section</span></a><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">. Below, you can find the basics of JSX necessary to get you started.</span></p>\n<h3 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Why JSX?</span></h3>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Instead of artificially separating</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><em>technologies</em></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">by putting markup and logic in separate files, React</span> <a href=\"https://en.wikipedia.org/wiki/Separation_of_concerns\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">separates</span> <span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><em>concerns</em></span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with loosely coupled units called “components” that contain both. We will come back to components in a</span> <a href=\"https://reactjs.org/docs/components-and-props.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">further section</span></a><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">, but if you’re not yet comfortable putting markup in JS,</span> <a href=\"https://www.youtube.com/watch?v=x7cQ3mrcKaY\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">this talk</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">might convince you otherwise.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React</span> <a href=\"https://reactjs.org/docs/react-without-jsx.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">doesn’t require</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">With that out of the way, let’s get started!</span></p>\n<h3 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Embedding Expressions in JSX</span></h3>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">In the example below, we declare a variable called</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>name</code></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">and then use it inside JSX by wrapping it in curly braces:</span></p>\n<p style=\"text-align:start;\"></p>\n<pre style=\"margin-left:1rem;\"><br>&nbsp;</pre>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615778715619,
+      "star": 600,
+      "view": 983,
+      "id": 3,
+      "publishTime": 1615778911762
+    },
+    {
+      "title": "Rendering Elements",
+      "categoryId": 3,
+      "content": "<p style=\"text-align:start;\"></p>\n<h2 style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React Only Updates What’s Necessary</span></h2>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">You can verify by inspecting the</span> <a href=\"https://reactjs.org/redirect-to-codepen/rendering-elements/update-rendered-element\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">last example</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with the browser tools:</span></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://reactjs.org/c158617ed7cc0eac8f58330e49e48224/granular-dom-updates.gif\" alt=\"DOM inspector showing granular updates\" style=\"height: ;width: \"/>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Even though we create an element describing the whole UI tree on every tick, only the text node whose contents have changed gets updated by React DOM.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(109,109,109);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Is this page useful?</span><a href=\"https://github.com/reactjs/reactjs.org/tree/master/content/docs/rendering-elements.md\" target=\"_self\"><span style=\"color: rgb(55,57,64);background-color: transparent;font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Edit this page</span></a>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 3,
+      "createTime": 1615778740202,
+      "star": 800,
+      "view": 869,
+      "id": 4,
+      "publishTime": 1615778912481
+    },
+    {
+      "title": "Components and Props",
+      "categoryId": 4,
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(109,109,109);font-size: 18px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a</span> <a href=\"https://reactjs.org/docs/react-component.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 18px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">detailed component API reference here</span></a><span style=\"color: rgb(109,109,109);font-size: 18px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.</span></p>\n<h2 style=\"text-align:start;\"><br> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Let’s recap what happens in this example:</span></h2>\n<ol>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">We call</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>ReactDOM.render()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;Welcome name=\"Sara\" /&gt;</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">element.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Welcome</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component with</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>{name: 'Sara'}</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">as the props.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Our</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Welcome</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component returns a</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">element as the result.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React DOM efficiently updates the DOM to match</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code>.</span></li>\n</ol>\n<blockquote style=\"text-align:start;\"></blockquote>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>Note:</strong></span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Always start component names with a capital letter.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React treats components starting with lowercase letters as DOM tags. For example,</span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;div /&gt;</code></span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">represents an HTML div tag, but</span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;Welcome /&gt;</code></span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">represents a component and requires</span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Welcome</code></span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">to be in scope.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">To learn more about the reasoning behind this convention, please read</span> <a href=\"https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">JSX In Depth</span></a><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">.</span></p>\n<h2 style=\"text-align:start;\"><br>&nbsp;</h2>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615778777924,
+      "star": 100,
+      "view": 201,
+      "id": 5,
+      "publishTime": 1615778914498
+    },
+    {
+      "title": "State and Lifecycle",
+      "categoryId": 4,
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Now the clock ticks every second.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Let’s quickly recap what’s going on and the order in which the methods are called:</span></p>\n<ol>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">When</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;Clock /&gt;</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">is passed to</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>ReactDOM.render()</code>, React calls the constructor of the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component. Since</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">needs to display the current time, it initializes</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>this.state</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with an object including the current time. We will later update this state.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React then calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component’s</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>render()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code>’s render output.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">When the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">output is inserted in the DOM, React calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>componentDidMount()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">lifecycle method. Inside it, the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component asks the browser to set up a timer to call the component’s</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>tick()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method once a second.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Every second the browser calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>tick()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method. Inside it, the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component schedules a UI update by calling</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>setState()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with an object containing the current time. Thanks to the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>setState()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">call, React knows the state has changed, and calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>render()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method again to learn what should be on the screen. This time,</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>this.state.date</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">in the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>render()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method will be different, and so the render output will include the updated time. React updates the DOM accordingly.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">If the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component is ever removed from the DOM, React calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>componentWillUnmount()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">lifecycle method so the timer is stopped.</span></li>\n</ol>\n<h2 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Using State Correctly</span></h2>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">There are three things you should know about</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>setState()</code>.</span></p>\n<h3 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Do Not Modify State Directly</span></h3>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">For example, this will not re-render a component:</span></p>\n<p style=\"text-align:start;\"><br>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615778808893,
+      "star": 300,
+      "view": 454,
+      "id": 6,
+      "publishTime": 1615778916224
+    },
+    {
+      "title": "Forms",
+      "categoryId": 5,
+      "content": "<h2 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Controlled Components</span></h2>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">In HTML, form elements such as</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;input&gt;</code>,</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;textarea&gt;</code>, and</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;select&gt;</code></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with</span> <a href=\"https://reactjs.org/docs/react-component.html#setstate\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>setState()</code></span></a><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">We can combine the two by making the React state be the “single source of truth”. Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a “controlled component”.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:</span></p>\n<p style=\"text-align:start;\"><br>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615778852584,
+      "star": 309,
+      "view": 480,
+      "id": 7,
+      "publishTime": 1615778917074
+    },
+    {
+      "title": "Thinking in React",
+      "categoryId": 6,
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(109,109,109);font-size: 18px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">One of the many great parts of React is how it makes you think about apps as you build them. In this document, we’ll walk you through the thought process of building a searchable product data table using React.</span></p>\n<h2 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Start With A Mock</span></h2>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Imagine that we already have a JSON API and a mock from our designer. The mock looks like this:</span></p>\n<p style=\"text-align:start;\"></p><p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Our JSON API returns some data that looks like this:</span></p>\n<p style=\"margin-left:0px;\"><br> <span style=\"font-size: 17px;\">The first thing you’ll want to do is to draw boxes around every component (and subcomponent) in the mock and give them all names. If you’re working with a designer, they may have already done this, so go talk to them! Their Photoshop layer names may end up being the names of your React components!</span></p>\n<p style=\"margin-left:0px;\"><span style=\"font-size: 17px;\">But how do you know what should be its own component? Use the same techniques for deciding if you should create a new function or object. One such technique is the</span> <a href=\"https://en.wikipedia.org/wiki/Single_responsibility_principle\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;\">single responsibility principle</span></a><span style=\"font-size: 17px;\">, that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"font-size: 17px;\">Since you’re often displaying a JSON data model to a user, you’ll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. That’s because UI and data models tend to adhere to the same</span> <span style=\"font-size: 17px;\"><em>information architecture</em>. Separate your UI into components, where each component matches one piece of your data model.</span></p>\n<p style=\"margin-left:0px;\"></p><p style=\"margin-left:0px;\"><span style=\"font-size: 17px;\">You’ll see here that we have five components in our app. We’ve italicized the data each component represents.</span></p>\n<ol>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: 16px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code><strong>FilterableProductTable</strong></code></span> <span style=\"color: rgb(26,26,26);font-size: 16px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>(orange):</strong></span> <span style=\"color: rgb(26,26,26);font-size: 16px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">contains the entirety of the example</span><br>&nbsp;</li>\n</ol>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615778891518,
+      "star": 781,
+      "view": 889,
+      "id": 8,
+      "publishTime": 1615778917615
+    },
+    {
+      "title": "测试",
+      "categoryId": 3,
+      "content": "<p>测试</p>\n",
+      "region": "all",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 3,
+      "createTime": 1616203436307,
+      "star": 1,
+      "view": 6,
+      "id": 9,
+      "publishTime": 1616203519274
+    },
+    {
+      "title": "VDAIL",
+      "categoryId": 1,
+      "content": "<p>VDAIL是西安邮电大学的一个人工智能实验室。</p>\n",
+      "region": "非洲",
+      "author": "轩辕翠花",
+      "roleId": 3,
+      "auditState": 0,
+      "publishState": 0,
+      "createTime": 1680015994403,
+      "star": 0,
+      "view": 0,
+      "id": 11
+    },
+    {
+      "title": "西安邮电大学",
+      "categoryId": 3,
+      "content": "<p>一所高水平邮电大学。</p>\n",
+      "region": "非洲",
+      "author": "轩辕翠花",
+      "roleId": 3,
+      "auditState": 0,
+      "publishState": 0,
+      "createTime": 1680016107084,
+      "star": 0,
+      "view": 0,
+      "id": 12
+    },
+    {
+      "title": "惊！！！西安房价暴涨",
+      "categoryId": 6,
+      "content": "<p>未来可期 家人们</p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 3,
+      "publishState": 0,
+      "createTime": 1680076718787,
+      "star": 0,
+      "view": 0,
+      "id": 14
+    },
+    {
+      "title": "西安邮电大学入选全球Top10高校",
+      "categoryId": 1,
+      "content": "<p>666</p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 3,
+      "createTime": 1680076789929,
+      "star": 0,
+      "view": 0,
+      "id": 15,
+      "publishTime": 1680231913193
+    },
+    {
+      "title": "西安房价跌了！！！",
+      "categoryId": 1,
+      "content": "<p>fake news!!!!!</p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680079282716,
+      "star": 0,
+      "view": 0,
+      "id": 17,
+      "publishTime": 1680495374538
+    },
+    {
+      "title": "西安邮电大学---”五好“导师",
+      "categoryId": 3,
+      "content": "<p style=\"text-align:center;\"><span style=\"color: rgb(50,50,50);font-size: 30px;font-family: 微软雅黑;\"><strong>史上”最牛“导师---陈皓</strong></span>&nbsp;</p>\n<p></p>\n<img src=\"https://ts1.cn.mm.bing.net/th?id=OIP-C.bY6FfG7ge_PLTXLGsqEXGwHaLG&w=123&h=185&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\"><strong>陈皓，男</strong></span><span style=\"color: rgb(50,50,50);background-color: rgb(255,255,255);font-size: 14pt;font-family: 仿宋_GB2312;\"><strong>，1978年5月出生</strong></span><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_GB2312;\"><strong>，博士，教授，计算机科学与技术专业硕士生导师。2009年12月入职西安邮电大学，2017.6-2018.6美国新泽西理工学院（NJIT）国家留学基金委公派访问学者。主要从事智能计算、计算机视觉、医疗大数据等方面的研究工作，主持完成国家自然科学基金、陕西省重大研发计划、陕西省自然科学基金等各类项目十余项，参与国家科技部重点研发计划“数字诊疗装备研发”专项项目等各类重大项目多项。在《Complex &amp; Intelligent Systems》、《Medical Physics》、《自动化学报》等国内外期刊以及IJCAI、AAPM等顶级国际会议发表研究论文五十余篇，申请国家发明专利十余项。担任国家自然科学基金通讯评审人，多个外省科技厅项目评审人以及《IEEE Transactions on Cybernetics》、《Medical Physics》、《计算机学报》等多个国内外高影响力期刊的审稿人。与交大一附院、二附院，美国UCLA医学院及NJIT大数据中心保持了常年的合作关系。</strong></span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">以下为近期开展中的三个主要研究方向及相关成果：</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">1. 针对MRI、CT及腔境等医学影像进行的病灶分割、图像分类和预测以及相关可解释性分析方法等研究；</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">2. 自动机器学习以及进化机器学习等智能计算方法的研究；</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">3. 通过计算机视觉进行的人体行为识别及相关应用研究；</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[1] Hao Chen, Guoxin ZHANG, et al.. Using Dual Evolutionary Search to Construct Decision Tree based Ensemble Classifier [J], Complex &amp; Intelligent Systems, 2022, Publishing.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[2] Hao CHEN, Xin LI, et al. Automatic Segmentation of Rectal Tumor On Magnetic Resonance Images Via A Deep Discriminative Model Consisting of U-Net and Conditional Random Field Based Post-Processing [C], American Association of Physicists Medicine (AAPM) COMP Meeting, 10th -14th July, 2022.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[3] Hao CHEN, Yang LIU, et al. A Subregion-Based Survival Prediction Based on Multi-Parametric MRIs for Glioblastoma [C], the Annual Meeting Scientific Program Committee of the American Society for Radiation Oncology (ASTRO), 23th -26th October, 2022.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[4] Hao CHEN, Duo BAN, X.Sharon Qi, et al. An Evolutionary Feature Selection-Based Brain Glioma Detection and Segmentation Approach in Magnetic Resonance Imaging [J]. Medical Physics, 2021,</span> <span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">DOI:</span> <span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">10.1002/mp.15026.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[5] Hao CHEN, G. X. ZHANG, et al. Dual Evolutionary Ensemble Learning: An Automatic Ensemble Classifier Construction Method [C], the 30th International Joint Conference on Artificial Intelligence (IJCAI 2021): the workshop on Data Science Meets Optimization, 19th -26th August, 2021.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[6] Hao Chen, Yu Xia, Qing Yang, et al. Time-Series Data Dynamic Density Clustering [J]，Intelligent Data Analysis，2021, 25(6): 1487-1506.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[7] Hao Chen, Yu Xia, et al. A CT Signs Quantization Analysis Method for Pulmonary Nodules Malignancy Grading [J], International Journal of Imaging Systems and Technology, 2021, 1-12. DOI: https://doi.org/10.1002/ima. 22605.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[8] Hao CHEN, Yang LIU, et al. Predicting Overall Survival of Patients with Glioma Via A Novel Framework Consisting of Two-Phase Feature Selection and Fused Regression Forest [C], American Association of Physicists Medicine (AAPM) COMP Meeting, 25th -29th July, 2021.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[9] Hao CHEN, Duo BAN, et al. What's Behind Auto-Segmentation Models: An Interpretability Analysis of Calculation Logic of Segmentation Model for Brain Tumor [C], American Association of Physicists Medicine (AAPM) COMP Meeting, 25th -29th July, 2021.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[10] 陈皓, 李广, 刘洋, 强永乾. 一种在MR图像中进行脑胶质瘤检测和病灶分割的方法[J]. 电子与信息学报, 2021, 43(4): 992-1002.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[11] 陈皓, 段红柏, 郭紫园, 强永乾. 基于CT征象量化分析的肺结节恶性度分级[J]. 电子与信息学报, 2021, 43(5): 1405-1413.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[12] Hao Chen, Z.Y. Guo, H. B. Duan, Zhi Wei, A Genetic Programming-Driven Data Fitting Method [J], IEEE Access, 2020, 8: 111448-111459.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(50,50,50);font-size: 14pt;font-family: 仿宋_gb2312;\">[13] Hao CHEN, Guang LI, X.Sharon Qi, et al. A Hybrid Approach for Brain Tumor Detection and Segmentation via Multiparametric Magnetic Resonance Imaging [C], 2020 American Association of Physicists Medicine (AAPM) COMP Meeting, 12th -16th July, 2020.</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(50,50,50);background-color: rgb(255,255,255);font-size: 14pt;font-family: 仿宋_GB2312;\">我们的课题组已形成了有效的研究梯队并积累了丰富的资源，实验室具有良好的科研环境和实验平台。欢迎计算机、通讯、电子及自动化等专业学生报考，特别欢迎编程能力强、逻辑清晰、有较好数学与英语基础的同学。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(50,50,50);background-color: rgb(255,255,255);font-size: 14pt;font-family: 仿宋_GB2312;\"><strong>联系方式Email: chenhao@xupt.edu.cn</strong></span>&nbsp;</p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680169220631,
+      "star": 0,
+      "view": 1,
+      "id": 18,
+      "publishTime": 1680495375842
+    },
+    {
+      "title": "西邮VDAIL竟有这种事？",
+      "categoryId": 1,
+      "content": "<p style=\"text-align:center;\"><span style=\"font-size: 24px;\">快跑！别来</span></p>\n<p></p>\n<img src=\"https://ts2.cn.mm.bing.net/th?id=ORMS.bc059d37a3eec1ca8266c6c3f97afe21&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1&p=0\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p></p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 1,
+      "publishState": 0,
+      "createTime": 1680169637478,
+      "star": 0,
+      "view": 0,
+      "id": 19
+    },
+    {
+      "title": "VDAIL实验室纳新啦！！！",
+      "categoryId": 1,
+      "content": "<p>钱钱钱钱钱</p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 3,
+      "createTime": 1680244551499,
+      "star": 0,
+      "view": 0,
+      "id": 21,
+      "publishTime": 1680244558081
+    },
+    {
+      "title": "VDAIL实验室纳新啦！！！",
+      "categoryId": 1,
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">看到有同学在问西安邮电大学的VDAIL实验室怎么样，这里小千就来给大家介绍一下VDAIL实验室和成果展现，给大家参考一下。</span></p>\n<p><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\"><strong>VDAIL实验室校区地址</strong></span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">首先先给大家介绍一下VDAIL实验室地址，坐落在：陕西省西安市西安邮电大学长安校区东区逸夫教学楼FF105，联系和咨询电话可以拨打 110-110-110，会有专人负责接待同学。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\"><strong>VDAIL</strong></span></p>\n<p><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">再给大家简单介绍一下VDAIL实验室，VDAIL</span> <span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">是西邮的顶尖实验室，主攻医疗大数据，并且每月都会更新最新的前沿技术。</span></p>\n<p><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">VDAIL</span> <span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">一直秉持着“用良心做科研”的理念，在全国拥有上百家的合作医院，更是有超过20000家的合作企业。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">其毕业生目前在目前已在深圳、上海、郑州、广州、大连、武汉、成都、西安、杭州、青岛、重庆、长沙、哈尔滨、南京、太原等地发展优秀。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">VDAIL毕业生主要从事HTML5前端、Java、Python、全链路设计、云计算、软件测试、大数据、智能物联网、Unity游戏开发、Go语言开发、网络安全，并推出软考、Adobe认证、PMP认证、红帽RHCE认证</span></a><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">课程</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;\">最后欢迎大家来到VDAIL实验室了解我们的科研进展，全程名师面对面组会探讨，保科研品质，还享受不定时摄像头偷拍、罚款等绝佳体验，赶紧来了解一下吧~~~~</span>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680448498625,
+      "star": 1000002,
+      "view": 1000104,
+      "id": 22,
+      "publishTime": 1680448528824,
+      "views": 1000006
+    },
+    {
+      "title": "chatGPT",
+      "categoryId": 3,
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">ChatGPT，全称聊天生成预训练转换器（英语：Chat</span> <span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">Generative</span> <span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">Pre-trained</span> <span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">Transformer），是</span><a href=\"https://zh.wikipedia.org/wiki/OpenAI\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">OpenAI</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">开发的</span><a href=\"https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">人工智能</span></a><a href=\"https://zh.wikipedia.org/wiki/%E8%81%8A%E5%A4%A9%E6%A9%9F%E5%99%A8%E4%BA%BA\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">聊天机器人</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">程序，于2022年11月推出。该程序使用基于</span><a href=\"https://zh.wikipedia.org/wiki/GPT-3\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">GPT-3.5</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">架构的</span><a href=\"https://zh.wikipedia.org/w/index.php?title=%E5%A4%A7%E5%9E%8B%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B&action=edit&redlink=1\" target=\"_self\"><span style=\"color: rgb(186,0,0);background-color: initial;font-size: 15.008;font-family: sans-serif;\">大型语言模型</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">（英语：</span><a href=\"https://en.wikipedia.org/wiki/Large_language_model\" target=\"_self\"><span style=\"color: rgb(51,102,187);background-color: initial;font-size: 15.008;font-family: sans-serif;\">Large language model</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">）并以</span><a href=\"https://zh.wikipedia.org/wiki/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">强化学习</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">训练。ChatGPT目前仍以文字方式交互，而除了可以用人类自然对话方式来交互，还可以用于甚为复杂的语言工作，包括自动生成</span><a href=\"https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">文本</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">、自动问答、自动</span><a href=\"https://zh.wikipedia.org/wiki/%E6%91%98%E8%A6%81\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">摘要</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">等多种任务。如：在自动文本生成方面，ChatGPT可以根据输入的文本自动生成类似的文本（</span><a href=\"https://zh.wikipedia.org/wiki/%E5%8A%87%E6%9C%AC\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">剧本</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">、</span><a href=\"https://zh.wikipedia.org/wiki/%E6%AD%8C%E6%9B%B2\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">歌曲</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">、</span><a href=\"https://zh.wikipedia.org/wiki/%E4%BC%81%E5%8A%83\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">企划</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">等），在自动问答方面，ChatGPT可以根据输入的问题自动生成答案。还有编写和调试计算机程序的能力。在推广期间，所有人可以免费注册，并在登录后免费使用ChatGPT与AI机器人对话。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">ChatGPT可写出相似真人的文章，并在许多知识领域给出详细和清晰的回答而迅速获得关注，证明了从前认为AI不会取代的知识型工作它也足以胜任，对</span><a href=\"https://zh.wikipedia.org/wiki/%E9%87%91%E8%9E%8D\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">金融</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">与</span><a href=\"https://zh.wikipedia.org/wiki/%E7%99%BD%E9%A0%98\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">白领</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">人力市场的冲击相当大，但也认为事实准确度参差不齐是其重大缺陷，并认为基于</span><a href=\"https://zh.wikipedia.org/wiki/%E6%84%8F%E8%AD%98%E5%BD%A2%E6%85%8B\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">意识形态</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">的模型训练结果须小心校正。ChatGPT于2022年11月发布后，</span><a href=\"https://zh.wikipedia.org/wiki/OpenAI\" target=\"_self\"><span style=\"color: rgb(6,69,173);background-color: initial;font-size: 15.008;font-family: sans-serif;\">OpenAI</span></a><span style=\"color: rgb(32,33,34);background-color: rgb(255,255,255);font-size: 15.008;font-family: sans-serif;\">估值已涨至290亿美元。上线5天后已有100万用户，上线两个月后已有上亿用户。目前ChatGPT-3.5为免费版本，ChatGPT-4供ChatGPT Plus会员使用。</span>&nbsp;</p>\n",
+      "region": "亚洲",
+      "author": "铁锤",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680487754877,
+      "star": 0,
+      "view": 0,
+      "id": 23,
+      "publishTime": 1680487772495
+    },
+    {
+      "title": "阿里拆分六大集团或将独立上市，京东再冲两个IPO，货拉拉递表港交所、Keep更新招股书",
+      "categoryId": 2,
+      "content": "<p><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI;\">每周定期分享《一周未来商业》，围绕电商/新消费、物流/供应链、生活服务、以及未来商业创新创投领域，以“事件+短评”的形式，洞见未来商业发展趋势。</span>&nbsp;</p>\n<p></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19ov69.img?w=768&h=384&m=6\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">1、【张勇启动阿里“1+6+N”组织变革：设立六大业务集团，或将独立上市】</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">3月28日，阿里巴巴（NYSE:BABA，股价102.18美元，总市值2705.25亿美元；HK:09988，股价100.4港元，总市值2.13万亿港元）集团董事会主席兼首席执行官张勇发布全员信《唯有自我变革，才能开创未来》，启动新一轮公司治理变革。根据方案，在阿里巴巴集团之下，将设立阿里云智能、淘宝天猫商业、本地生活、菜鸟、国际数字商业、大文娱等六大业务集团和多家业务公司。业务集团和业务公司将分别成立董事会，实行各业务集团和业务公司董事会领导下的CEO负责制，阿里巴巴集团则将全面实行控股公司管理。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>未来商业短评：</strong>在张勇主导之下，阿里巴巴启动了这次“24年来最重要的组织变革”。这是张勇所力倡的“敏捷组织”的延续。相比过去历次变革，这次的必要性更强，难度更大。如今的阿里巴巴已经成长为多业务、多业态的超大型组织，各大业务需要更独立的经营策略，以便灵活地应对市场竞争。值得关注的是，本次组织变革之后，阿里巴巴的中后台职能部门将全面做轻、做薄，多年以来积累的中后台能力，将进入到相关业务集团和公司。2015年，阿里巴巴恰恰是因为推动“中台战略”，一度成为互联网科技行业公司治理标杆。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>2.【Keep更新招股书：2022年营收同比增长36.6%会员渗透率达10%】</strong></span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">3月28日，运动科技公司Keep向港交所更新招股书。招股书显示，2022年Keep订阅会员及线上付费内容收入8.94亿元同比增长60.0%，该增长主要源于Keep会员渗透率的不断上升，实现从2020年6.40%、2021年9.50%到2022年10.0%的连续三年增长。2022年Keep整体营收为22.1亿元人民币，同比增长36.6%，其中，2022年Keep自有品牌运动产品收入11.37亿元，依旧是营收最大来源，占比超过50%，该项收入增加主要源于运动产品客户增加、非DTC渠道产生的收入增加。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>未来商业短评：</strong>此前，Keep的苦恼在于，拥有庞大的用户人群，但难以变现。比起之前的财务数据，新版招股书显示，Keep的经营整体数据有明显改善。就在3月27日，Keep发布健身新物种：体感运动主机“KS”（keep station）以及Keep首款专业版划船机“A1”，成为Keep完善AIoT版图的关键。百联咨询创始人庄帅告诉《每日经济新闻》记者，从强调专业，到强调快乐，Keep可以进一步扩大月活用户，到大健康这个更大的市场去。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>3、【国美债转股方案获股东会通过 黄光裕将增持至超25%】</strong></span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">3月27日，国美零售（0493.HK，0.105港元/股，总市值41.77亿港元）发布晚间公告。公告显示，在当天的公司股东特别大会上，国美零售债转权方案获得78.96%的赞成票而被通过。据公告，此次债转股方案实施后，黄光裕及其关联方在国美零售的持股比例将增至25.66%。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>未来商业短评：</strong>自2022年12月开始，黄光裕多次减持国美零售，其在国美零售的股权一路不断稀释2023年1月2日，国美零售提出其今年首个债转股的方案，3月27日国美零售股东会通过的新债转股方案，两次方案将切实提高黄光裕在国美零售中的控制权。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>4、【钟薛高发布Sa'Saa系列3.5元冰棍】</strong></span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">3月29日，在上海举行的年度新品发布会上，钟薛高推出了名为Sa’Saa的系列新品冰棍。和以往均价在15元左右的产品不同，Sa'Saa系列产品仅售价3.5元，有红豆冰、绿豆冰、牛奶冰和可可冰四种口味。除了平价这一特征，品牌创始人林盛还表示，Sa'Saa也代表着年轻、时尚的品牌形象。他介绍，该新品的设计开发使用了包括ChatGPT、文心一言在内的多款主流AI产品，是冰品行业首款从起名到口味，再到设计，基本都由AI参与甚至主导的产品。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>未来商业短评：</strong>钟薛高是否要借Sa'Saa系列进军平价雪糕市场？林盛在接受《每日经济新闻》记者采访时表示，并没有去切入一个叫平价的雪糕赛道，它本来就是钟薛高品牌规划中的一部分，“作为一个比较丰满的品牌，它应该有不同的产品线、不同的品牌阵列去适应不同的消费者。”除了价格以外，Sa'Saa系列还有科技感这一特点。钟薛高力推“雪糕成为AI周边”这个概念，更多地是在讨好Z世代年轻人，增强产品与年轻人之间的互动性。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>5、【TVB加码淘宝直播第二场直播 成交额7320万元】</strong></span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">3月30日晚，TVB淘宝第二场直播收获了7320万元的成交额，累计观看690万人次。前一天（3月29日），趁着第二场直播开播前，TVB宣布将加大投入力度、引入更多旗下艺人上淘宝开播。TVB电商业务负责人彭明晔表示，将倾斜更多资源到淘宝直播，打造最具影响力的主播矩阵。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>未来商业短评：</strong>TVB入局淘宝直播，对双方而言可以说是一个互利之举。对于处于衰落中的TVB而言，加入淘宝直播能为其带来新的发展机会，对于淘宝直播而言，TVB港星的组团到来，也有助于其巩固内容化的战略方向。当前阶段，外援们的纷至沓来也给了淘宝直播打造更成熟的内容生态的契机，但最终决定淘宝直播内容化战略成效高低的，还是用户的态度。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>6、【奈雪的茶发布2022年财报：新增门店数251家总营收42.9亿元】</strong></span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">3月30日，奈雪的茶（02150.HK,8.49港元/股，总市值145.61亿港元）发布2022年业绩公告，公告显示，2022年奈雪的茶总收入为42.916亿元人民币，去年同期这一数字为42.966亿元人民币。在门店方面，奈雪的茶截至2022年12月31日在全国89个城市拥有1068间直营门店，2022年新增门店数251家，其门店经营利润率约为11.8%，较去年同期的14.5%有所下滑。会员方面，奈雪的茶注册会员数量2022年增长至约5660万名，较2021年的4330万增幅约30.7%，会员月度复购率提升至26.3%。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>未来商业点评：</strong>此次奈雪的营收出现上市之后的首次下滑。盈利能力一直是奈雪的茶亟需建设的领域，奈雪通过投资等方式不断增加自己的盈利能力，作为坚持直营的头部茶饮品牌，奈雪的茶内部继续降本增效、外部通过投资等手段不断深入到更大市场之中是必要之举。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>7、【京东产发、京东工业拟独立上市】</strong></span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">3月30日晚，京东集团发布公告称，拟分拆旗下京东产发、京东工业于香港联交所主板独立上市。公告称，京东集团已向香港联交所提交分拆建议，且香港联交所已确认可进行拟议分拆。京东产发是京东集团旗下唯一的仓储物流设施开发运营管理子集团，持有集团旗下自建的全部仓储物流设施项目。而京东工业3月24日才刚宣布完成B系列优先股交易，总额3亿美元。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\"><strong>未来商业短评：</strong>2020年以来，京东集团旗下多个子业务纷纷独立上市，京东系版图也由此徐徐展开。如今，京东工业、京东产发一同赴港IPO，囊括AI和云业务的京东科技也在排队IPO中。京东强B端业务属性的子板块都在寻求资本助力，作为未来业务拓展的承托。</span>&nbsp;</p>\n<p></p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680513710773,
+      "star": 1024,
+      "view": 1027,
+      "id": 24,
+      "publishTime": 1680513717384
+    },
+    {
+      "title": "Canalys：2023 年中国云服务支出将增长 12%",
+      "categoryId": 2,
+      "content": "<p><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI;\">根据Canalys发布的数据，2022年对于中国大陆的云计算市场来说是保守的一年，市场增长了10%，全年总额为303亿美元。第四季度以4%的同比增长收尾，季度总额为79亿美元。与过去几年的强劲表现相比，2022年的增长率出现了明显下降（前三年的年增长率超过30%）。疫情的影响及其限制不容忽视–企业对云计算的采用表现出较少的热情，更关注云计算带来的运营成本效益。已经迁移到云端的客户开始关注平台和软件服务。随着限制的取消，对企业的负面影响正在逐渐消除，云计算的需求也准备回归。但围绕IT预算的一定程度的谨慎，将使云计算的增长难以恢复到高峰。2023年，Canalys预计中国云基础设施服务支出全年将增长12%。</span>&nbsp;</p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">2022年中国大陆前四大云计算厂商，阿里云、华为云、腾讯云和百度智能云，合计增长9%，占云服务客户支出总额的79%。以中国电信为首的运营商公司正通过推出自己的云服务来抢占市场份额，导致前四大云计算厂商的市场份额出现非常轻微的下降。这给前四大厂商带来的竞争压力将进一步体现出来，特别是在政府和公共领域，因为这部分是运营商的竞争优势所在。尽管运营商云在起步阶段势头强劲，但在平台和软件能力的提供方面仍然存在差距。在成为云基础设施服务市场的强大参与者之前，他们需要缩小这部分的差距。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">在2022年， PaaS（Platform-as-a-Service）占整个中国云服务市场的23%。”企业客户对云服务的要求变得更加复杂，很多客户要求定制，重点已经从单纯提供云基础设施，转向提供全面的云平台和软件能力，”Canalys研究分析师Yi Zhang说。”随着中国头部云厂商宣布投资招募专注于垂直领域的合作伙伴，为客户提供PaaS解决方案，预计PaaS的份额在2023年将会增加。”</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">阿里云在2022年仍然排在第一位，在同比增长7%之后，在云基础设施服务方面的客户总支出占36%。阿里巴巴云经历了艰难的一年，增长率在2021年的强劲表现后逐季度下降。然而，来自基于互联网的客户的收入萎缩（这是阿里云最强大的业务部门）预计在2023年减少。随着大流行病限制解除后经济恢复稳定，基于互联网的客户的云需求将出现反弹。在度过安全危机后，阿里云正在积极寻求政府和公共事务领域的客户拓展机会。阿里云在海外扩张方面正在取得稳步进展，本季度宣布在日本开设第三个数据中心。回顾整个2022年，它在亚太、中东和欧洲推出了6个新的数据中心，横跨三大洲。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">华为云以19%的市场份额排名第二，每年增长13%，领先于整体市场增长。2022年，华为云从其对渠道生态系统的投资和建设中获得了可观的回报，通过合作伙伴获得的收入增长了55%。它宣布将升级其合作伙伴计划，在合作伙伴激励方面为合作伙伴提供更有吸引力的福利，但升级后的合作伙伴计划的具体内容还有待观察。此外，受益于其帮助中国企业海外扩张的战略，华为云今年在海外地区的收入增长令人瞩目。它计划于2023年在土耳其、沙特阿拉伯、菲律宾、埃及和其他地区开设新的数据中心。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">腾讯云排名第三，市场份额为16%。腾讯云在这一年继续受到内部业务重组的影响，收入规模增长放缓。然而，遵循其专注于盈利的战略，它将注意力转向发展平台和软件服务能力，在2022年的PaaS市场上它位居第二，仅次于阿里云。此外，它在2022年推出了新的音视频品牌Media Services，涵盖400个一站式音视频媒体服务，腾讯云决心在其媒体服务经验的基础上，成为一个竞争和差异化的优势。腾讯云最近扩大了其产品组合，包括推出 “Metaverse-in-a-Box”，以加速企业进入“元宇宙”的旅程。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">百度智能云在2022年占据了中国云计算市场的9%，并同比增长11%。百度智能云在第四季度对其云业务进行了重组，主动剥离了低效益的项目，这将在短期内对其增长速度产生影响。百度一直在遵循人工智能和云服务相结合的战略。随着ChatGPT的推出掀起波澜，百度在2023年3月推出了ChatGPT模型的本地版本。未来，百度智能云很可能以此作为独特的价值主张，吸引企业加入百度智能云，类似于微软对OpenAI的整合。</span>&nbsp;</p>\n<p></p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680513850377,
+      "star": 0,
+      "view": 0,
+      "id": 25,
+      "publishTime": 1680513857829
+    },
+    {
+      "title": "软硬兼施的时代，车企爱搞机？",
+      "categoryId": 6,
+      "content": "<p><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI;\">你是否有想过，未来不需要通过更换新车就能体验到最新的智能化技术和体验，只需要通过升级手机就能升级汽车吗？魅族助力大家实现换手机就是“换车”的梦想。近日魅族掌门人就发出了手机软件定义汽车的豪言壮语，表示未来手机将以一个零部件的角色进入到汽车，成为手机域，加上手机的快速迭代，能够为汽车带来不断创新的体验，升级手机就能升级汽车。同时它还预言没有手机软件赋能的汽车厂商都将逐渐掉队。</span>&nbsp;</p>\n<p></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oAAx.img?w=768&h=576&m=6\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">不可否认，随着汽车市场往智能电动化趋向发展，智能汽车、智能手机都不再各行其道，融合将成为行业大势。但是在汽车与手机充分融合的进程中，横亘在眼前的难题也显而易见。另外，造车也没有速成班，有手机软件赋能的车企也不一定能跟上大队伍。</span>&nbsp;</p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680514218685,
+      "star": 0,
+      "view": 1,
+      "id": 26,
+      "publishTime": 1680514225755
+    },
+    {
+      "title": "六大行年报解读：营收增速承压，涉房贷款不良率仍走高",
+      "categoryId": 6,
+      "content": "<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19nm21.img?w=768&h=542&m=6\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p></p>\n<p>国有六大行:<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601398\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">工商银行</span></a>、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601939\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">建设银行</span></a>、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601658\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">邮储银行</span></a>、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601328\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">交通银行</span></a>、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601988\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">中国银行</span></a>、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601288\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">农业银行</span></a>2022年业绩渐次披露完毕。</p>\n<p style=\"margin-left:0px;\">数据显示，2022年，六大行合计实现营业收入3.69万亿元，同比增长0.29%；实现归母净利润1.35万亿元，同比增长5.97%。与2021年相比，六大行整体营收及净利增速均出现下滑，而<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601398\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">工商银行</span></a>（601398，SH）和<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601939\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">建设银行</span></a>（601939,SH）营收甚至出现了负增长。</p>\n<p style=\"margin-left:0px;\">资产质量方面则大体稳定。截至2022年末，六大行不良贷款余额共计12759.96亿元，较2021年末增加1124.41亿元。除<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601658\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">邮储银行</span></a>(601658,SH)外，其他五家大行不良率均出现下行，但<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601658\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">邮储银行</span></a>不良率在六大行中仍最低，为0.84%；工行、建行相对较高，均为1.38%。</p>\n<p style=\"margin-left:0px;\">房地产行业对于银行资产端的冲击仍在。2022年，六大行房地产行业对公不良率、个人住房按揭贷款不良率集体抬升。</p>\n<p style=\"margin-left:0px;\">基金理财的大幅波动也深刻影响了六大行的中间业务收入。2022年，六家大行手续费及佣金净收入增速齐降，<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601398\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">工商银行</span></a>、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601939\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">建设银行</span></a>、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601328\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">交通银行</span></a>(601328,SH)、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601988\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">中国银行</span></a>(601988,SH)甚至出现了下降。</p>\n<p style=\"margin-left:0px;\">分红方面，六大行的股息率大部分在7%左右，最低的<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601658\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">邮储银行</span></a>也达到了5.58%，已经远超普通理财收益率，但投资者也必须承担银行股价持续萎靡的痛苦。</p>\n<p></p>\n<h2><span style=\"font-size: 30px;font-family: Eb Garamond;\"><strong>息差承压，营收增速下滑</strong></span></h2>\n<p style=\"margin-left:0px;\">数据显示，2022年“宇宙行”<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601398\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">工商银行</span></a>仍然吸金能力最强，9179.89亿元的营收和3610.38亿元的净利润均位列首位。<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601939\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">建设银行</span></a>以8224.73亿元的营收和3231.66亿元的净利润位列第二。</p>\n<p style=\"margin-left:0px;\">其余大行中，<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601288\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">农业银行</span></a>、<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601988\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">中国银行</span></a>营收规模均超过6000亿元、净利润规模超过2000亿元，位居第三、第四。交行和<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601658\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">邮储银行</span></a>的净利润分别为921.49亿元和852.24亿元。</p>\n<p style=\"margin-left:0px;\">值得注意的是，<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601398\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">工商银行</span></a>和<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601939\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">建设银行</span></a>的营收出现了负增长，尤其<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601398\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">工商银行</span></a>的营收较上年明显下滑了2.63%。<a href=\"https://www.tmtpost.com/kegu/view/price?code=sh601658\" target=\"_blank\"><span style=\"color: rgb(0,120,212);\">邮储银行</span></a>则营收增长5.08%，增幅为六大行中第一。</p>\n<p></p>\n<p></p>\n<p style=\"margin-left:0px;\"><br>&nbsp;</p>\n",
+      "region": "亚洲",
+      "author": "西门吹灯",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680514284127,
+      "star": 0,
+      "view": 0,
+      "id": 27,
+      "publishTime": 1680514289923
+    },
+    {
+      "title": "切尔西天亮了！波特为何下课？4大原因解读：用废6亿新援",
+      "categoryId": 5,
+      "content": "<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">北京时间4月3日，切尔西官方宣布波特下课，对于蓝军球迷来说，渴望已久的事情终于发生了，那么他为何必须得下课？我们不妨分析一番。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oKmt.img?w=768&h=960&m=6\" alt=\"切尔西天亮了！波特为何下课？4大原因解读：用废6亿新援\" style=\"height: ;width: inherit\"/>\n<p></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">成绩太过糟糕</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">波特下课的最直接原因，当然就是糟糕的战绩了。虽然欧冠进入八强，但是在英超，切尔西28轮只取得10胜8平10负的战绩，以38分排名第11，竟然位于积分榜下半区，距离前四相差12分之多。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">自去年9月上任以来，波特执教了22场联赛，也仅收获7胜7平8负，输球场次比胜利场次还多，进21球失21球，净胜球为0！场均1.27分，也是英超时代执教超过20场的蓝军主帅里最低的。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">各项赛事，波特31场比赛录得12胜8平11负，进33球失31球，胜率只有38％，也是队史自21世纪以来最低的主教练，所以下课是必然的结果。</span></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19p3qV.img?w=768&h=952&m=6&x=4&y=67&s=784&d=638\" alt=\"切尔西天亮了！波特为何下课？4大原因解读：用废6亿新援\" style=\"height: ;width: inherit\"/>\n<p></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">用废6亿新援</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">去年夏天，切尔西在转会市场上斥资2.8亿欧元，引进8名新援，这些引援虽然与波特无关，但是他上任之后，有责任用好他们。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">而在今年冬窗，蓝军又砸下3.3亿欧元，签下8名新援，这就是直接买来给波特用的——加起来总投入6.1亿，创造了转会费的历史纪录。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">然而，波特并没有让新援完全融入球队，并将他们的特点和能力完全发挥出来，尤其是进攻端：菲利克斯英超8场2球，斯特林19场4球，身价高达7000万的穆德里克，更是还没有贡献英超处子球，也只有1次助攻。至于大卫-福法纳、马杜埃凯等年轻人，基本没有发挥啥作用。</span></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oUqs.img?w=768&h=960&m=6\" alt=\"切尔西天亮了！波特为何下课？4大原因解读：用废6亿新援\" style=\"height: ;width: inherit\"/>\n<p></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">性格的软弱</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">与有些狂野，甚至经常头脑发热的图赫尔相比，波特看起来更冷静，更平和，连说话都是轻声细语，但这也暴露出他性格软弱的一面。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">当图赫尔对裁判的失误无比愤怒和抱怨时，波特会接受这是作为比赛的一部分，并不愿意引起争议。当图赫尔列出比赛中出现的所有问题时，波特却会寻找“积极”的一面，并赞扬球员们的努力。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">可是这样的性格，根本镇不住豪门的更衣室，也很难在精神和斗志上激励球员，更难以在逆境之中敲打球员，从而挽回败局，最终只能在沉默中走向灭亡。</span></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oYvQ.img?w=768&h=960&m=6&x=353&y=193&s=396&d=752\" alt=\"切尔西天亮了！波特为何下课？4大原因解读：用废6亿新援\" style=\"height: ;width: inherit\"/>\n<p></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">战术用人遭质疑</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">执教布莱顿时，波特注重小组短传控球、边卫插上助攻、强弱侧转移，等等，给人留下了深刻印象，被誉为平民球队中的战术大师，也是受到切尔西垂青的主要原因之一。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">但是来到切尔西之后，波特并没有踢出球迷们想要的攻势足球，战术思路反而非常混乱，缺少成熟的套路和默契的配合，更多依靠球员个人能力作战，结果进攻不仅越来越差，防守也做得不够稳固。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">阵型方面，波特在三后卫和四后卫之间摇摆不定，一个也没成功；用人方面，就连他在布莱顿的爱将库库雷利亚都没有发挥出来， 而让助攻能力出色的里斯-詹姆斯踢右中卫，用奇克客串右翼卫，更是匪夷所思，饱受批评。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">综上所述，波特下课，早已是全体切尔西球迷的呼声，甚至很多人觉得他走得晚了。不过，蓝军的天是否从此就亮了呢？还得看新帅的表现了，据罗马诺报道，从拜仁下课的纳格尔斯曼有可能走马上任，而将他从拜仁帅位上踢走的，正是波特的前任图赫尔！</span>&nbsp;</p>\n",
+      "region": "亚洲",
+      "author": "铁锤",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680514520219,
+      "star": 0,
+      "view": 1,
+      "id": 28,
+      "publishTime": 1680514526036
+    },
+    {
+      "title": "意甲：莱奥梅开二度 AC米兰4-0横扫意甲领头羊 升至积分榜第三位",
+      "categoryId": 5,
+      "content": "<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">2022/23赛季意甲第28轮，AC米兰做客迎战领头羊那不勒斯。上半场，“红黑军团”反客为主，由莱奥和卜拉欣·迪亚斯先后破门。下半场易边再战，莱奥梅开二度。第67分钟，替补登场的萨勒马克斯连过数人后破门。最终全场比赛结束，AC米兰在客场以4-0大胜那不勒斯。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oMcG.img?w=620&h=386&m=6&x=195&y=64&s=182&d=90\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第三位\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第三位©</span> <span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">由 每日体育 提供</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">比赛焦点</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">1、卜拉欣·迪亚斯出任右边锋，贡献1球1助攻，下半场因伤提前离场。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">2、拉斐尔·莱奥联赛进球上双。</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">3、那不勒斯仍以16分优势领跑意甲，AC米兰以51分跃居积分榜第三位。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oKmM.img?w=712&h=402&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">精彩回顾</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">第3分钟，特奥倒三角传中，卜拉欣·迪亚斯迎球左脚抽射，梅雷特将球摁在身下</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">第7分钟，泽林斯基横扫门前，小西蒙尼左脚爆射高出横梁。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oYwa.img?w=450&h=247&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">第17分钟，AC米兰在客场取得领先，卡拉布里亚发动进攻，迪亚斯直塞禁区，莱奥形成单刀，冷静地挑射破网。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oUrg.img?w=450&h=247&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第©</span> <span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">由 每日体育 提供</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">第25分钟，AC米兰再下一场，特奥左路传中，卜拉欣·迪亚斯得球后扣过马里奥·鲁伊，右脚近距离抽射破网。</span></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19p0RG.img?w=450&h=247&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第©</span> <span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">由 每日体育 提供</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">第42分钟，莱奥把球分向右路，卜拉欣·迪亚斯果断起脚，梅雷特用指尖把球碰出底线。</span></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oOWt.img?w=450&h=247&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第©</span> <span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">由 每日体育 提供</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">上半场补时第2分钟，马里奥·鲁伊开出前场右侧的任意球，吉鲁飞身头球解围。</span></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oYwF.img?w=450&h=247&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">上半场补时第4分钟，泽林斯基晃出射门角度，左脚大力抽射，迈尼昂将球托出底线。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oUs6.img?w=450&h=247&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第©</span> <span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">由 每日体育 提供</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">易边再战第55分钟，克瓦拉茨赫利亚传向禁区，鲁伊迎球抽射，迈尼昂用脸挡出底线。随后，迪亚斯因伤提前离场。</span></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oUsj.img?w=450&h=247&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">第58分，托纳利中场抢下球权，迅速分向前场左路，莱奥假动作扣过拉赫马尼左脚抽射破门。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oYx6.img?w=450&h=247&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第©</span> <span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">由 每日体育 提供</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">第67分钟，萨勒马克斯突然加速突破，在甩开金玟哉和洛博特卡之后，果断地门前推射破网。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oKni.img?w=450&h=238&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">第82分钟，奥里吉右路横敲，本纳塞尔左脚抽射被对方球员挡出底线。</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oRcr.img?w=620&h=386&m=6&x=180&y=109&s=91&d=91\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第©</span> <span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">由 每日体育 提供</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">技术统计</span></p>\n<p style=\"text-align:left;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19oUsP.img?w=639&h=471&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p><span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第©</span> <span style=\"color: var(--neutral-foreground-rest);background-color: var(--fill-color);font-size: 12px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">由 每日体育 提供</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">球员评分</span></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"text-align:left;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA19p0Sc.img?w=768&h=437&m=6\" alt=\"意甲：莱奥梅开二度AC米兰4-0横扫意甲领头羊 升至积分榜第\" style=\"height: ;width: inherit\"/>\n<p></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">出场阵容</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">那不勒斯（4-3-3）：1-梅雷特、22-迪洛伦佐、13-拉赫玛尼、3-金玟哉（81’5-热苏斯）、6-马里奥·鲁伊、99-安古伊萨（67’91-恩东贝莱）、68-洛博特卡、20-泽林斯基（67’7-埃尔马斯）、21-波利塔诺（67’11-洛萨诺）、18-乔瓦尼·西蒙尼（75’81-拉斯帕多里）、77-克瓦拉茨赫利亚</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 17px;font-family: Segoe UI\", SegoeUI, Roboto, sans-serif;\">AC米兰（4-2-3-1）：16-迈尼昂、2-卡拉布里亚、24-克亚尔、23-托莫里、19-特奥、4-本纳塞尔（83’14-巴卡约科）、8-托纳利、33-克鲁尼奇（83’90-德凯特拉雷）、10-卜拉欣·迪亚斯（56’56-萨勒马克斯）、17-莱奥（73’12-雷比奇）、9-吉鲁（73’27-奥里吉）</span>&nbsp;</p>\n",
+      "region": "亚洲",
+      "author": "铁锤",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1680514643358,
+      "star": 1,
+      "view": 2,
+      "id": 29,
+      "publishTime": 1680514650616
+    }
+  ]
+}
